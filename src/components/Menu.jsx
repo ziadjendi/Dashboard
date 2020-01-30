@@ -90,7 +90,7 @@ const MenuItems = [
 ];
 export default function Menu() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
