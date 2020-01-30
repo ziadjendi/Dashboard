@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   select: {
     backgroundColor: theme.palette.common.white,
     height: 55,
-    width: 150
+    width: "100%"
   }
 }));
 
@@ -24,7 +24,7 @@ const SelectOptions = ({ label }) => {
     setOption(event.target.value);
   };
   return (
-    <FormControl className={classes.formControl}>
+    <React.Fragment>
       <Typography variant="subtitle1" align="right">
         {label}
       </Typography>
@@ -43,7 +43,7 @@ const SelectOptions = ({ label }) => {
         <MenuItem value={20}>خيار ثاني</MenuItem>
         <MenuItem value={30}>خيار ثالث</MenuItem>
       </Select>
-    </FormControl>
+    </React.Fragment>
   );
 };
 

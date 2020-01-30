@@ -10,6 +10,14 @@ import rtl from "jss-rtl";
 import { StylesProvider, jssPreset } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: "Calibri",
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500
+  },
+
   palette: {
     primary: {
       main: "#00a5d9",

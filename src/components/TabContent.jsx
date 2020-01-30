@@ -1,25 +1,10 @@
-import "date-fns";
 import React from "react";
 import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider
-} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
-import {
-  TableCell,
-  TableRow,
   TableBody,
   Table,
   TableContainer,
   makeStyles,
-  Paper,
-  Typography,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Link,
-  Switch
+  Paper
 } from "@material-ui/core";
 import Row from "./Row";
 const useStyles = makeStyles({
@@ -29,19 +14,21 @@ const useStyles = makeStyles({
 });
 
 const TabContent = () => {
-  const classes = useStyles();
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+    <TableContainer>
+      <Table>
         <TableBody>
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
+          <Row id="1" />
+          <Row id="2" />
+          <Row id="3" />
+          <Row id="4" />
+          <Row id="5" />
+          <Row id="6" />
+          <Row id="7" />
+          <Row id="8" />
+          {/* {[...Array(8).keys()].map(index => (
+            <Row id={index + 1} />
+          ))} */}
         </TableBody>
       </Table>
     </TableContainer>
