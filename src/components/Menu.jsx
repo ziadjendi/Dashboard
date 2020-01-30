@@ -1,40 +1,34 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import MenuIcon from "@material-ui/icons/Menu";
 import {
   Avatar,
   Grid,
-  TextField,
-  Fab,
   InputBase,
-  fade
+  Paper,
+  ListItemIcon
 } from "@material-ui/core";
-import red from "@material-ui/core/colors/red";
+import { red, grey } from "@material-ui/core/colors";
 import SearchIcon from "./common/searchIcon";
-import { grey } from "@material-ui/core/colors";
+
 import RainBow from "./RainBow";
+import {
+  Title4Icon,
+  Title3Icon,
+  Title2Icon,
+  Title1Icon,
+  Title5Icon
+} from "./SvgIcons/SvgIcons";
 
 const useStyles = makeStyles(theme => ({
-  appBar: {
-    position: "relative",
-    backgroundColor: theme.palette.common.white
-  },
-  title: {
-    marginLeft: theme.spacing(2),
-    flex: 1
-  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -64,16 +58,39 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 3, 1, 0),
     transition: theme.transitions.create("width"),
     width: "100%"
+  },
+  paper: {
+    backgroundColor: grey[200],
+    height: "100%"
+  },
+  listItemText: {
+    flexGrow: 0
+  },
+  listItem: {
+    "&:hover": {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.common.white
+    }
   }
 }));
 
+const handleHover = isHover => {
+  this.childIsHover = isHover;
+};
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
 
+const MenuItems = [
+  { label: "عنوان أول", icon: <Title1Icon /> },
+  { label: "عنوان ثاني", icon: <Title2Icon /> },
+  { label: "عنوان ثالث", icon: <Title3Icon /> },
+  { label: "عنوان رابع", icon: <Title4Icon /> },
+  { label: "عنوان خامس", icon: <Title5Icon /> }
+];
 export default function Menu() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -129,18 +146,25 @@ export default function Menu() {
           </div>
         </div>
         <RainBow />
-        <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItem>
-        </List>
+        <Paper className={classes.paper}>
+          <List>
+            {MenuItems.map(item => (
+              <React.Fragment>
+                <ListItem
+                  button
+                  onHover={handleHover}
+                  className={classes.listItem}
+                >
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText className={classes.listItemText}>
+                    {item.label}
+                  </ListItemText>
+                </ListItem>
+                <Divider />
+              </React.Fragment>
+            ))}
+          </List>
+        </Paper>
       </Dialog>
     </div>
   );

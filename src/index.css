@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#root .MuiSwitch-colorSecondary.Mui-checked {
+  color: white;
+}
+#root .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: orangered;
+}
+#root .MuiTypography-colorPrimary {
+  color: #333;
+  font-weight: 600;
+}
+#root .MuiChip-root.active-tab {
+  background-color: white;
+}
+#root .MuiChip-root.inactive-tab {
+  background-color: transparent;
+}
