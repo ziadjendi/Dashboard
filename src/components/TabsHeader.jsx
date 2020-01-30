@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Hidden,
-  Chip,
-  makeStyles,
-  TableContainer,
-  Paper,
-  Table,
-  TableBody,
-  TableRow,
-  TableCell
-} from "@material-ui/core";
+import { Hidden, Chip, makeStyles } from "@material-ui/core";
 import SelectOptions from "./common/selectOptions";
 
 const useStyles = makeStyles(theme => ({
@@ -28,11 +18,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const TabTitles = [
-  { key: 0, label: "تبويب1" },
-  { key: 1, label: "تبويب2" },
-  { key: 2, label: "تبويب3" },
-  { key: 3, label: "تبويب4" },
-  { key: 4, label: "تبويب5" }
+  { value: 0, label: "تبويب1" },
+  { value: 1, label: "تبويب2" },
+  { value: 2, label: "تبويب3" },
+  { value: 3, label: "تبويب4" },
+  { value: 4, label: "تبويب5" }
 ];
 
 const handleClick = e => {};
@@ -43,12 +33,21 @@ const TabsHeader = () => {
   return (
     <React.Fragment>
       <Hidden smUp>
-        <SelectOptions />
+        <div
+          style={{
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingTop: 10,
+            paddingBottom: 0
+          }}
+        >
+          <SelectOptions options={TabTitles} />
+        </div>
       </Hidden>
       <Hidden xsDown>
         {TabTitles.map(title => (
           <Chip
-            key={title.key}
+            key={title.value}
             label={title.label}
             onClick={handleClick}
             className={classes.chip}

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FormControl,
-  Select,
-  MenuItem,
-  Typography,
-  makeStyles
-} from "@material-ui/core";
+import { Select, MenuItem, Typography, makeStyles } from "@material-ui/core";
 import DownArrow from "./downArrow";
 const useStyles = makeStyles(theme => ({
   select: {
@@ -14,8 +8,13 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   }
 }));
-
-const SelectOptions = ({ label }) => {
+const defualtOptions = [
+  { label: "خيار أول", value: 10 },
+  { label: "خيار ثاني", value: 20 },
+  { label: "خيار ثالث", value: 30 },
+  { label: "خيار رابع", value: 40 }
+];
+const SelectOptions = ({ label, options = defualtOptions }) => {
   const classes = useStyles();
 
   const [option, setOption] = React.useState("0");
@@ -39,9 +38,9 @@ const SelectOptions = ({ label }) => {
         <MenuItem value="0" selected>
           قائمة منسدلة
         </MenuItem>
-        <MenuItem value={10}>خيار أول</MenuItem>
-        <MenuItem value={20}>خيار ثاني</MenuItem>
-        <MenuItem value={30}>خيار ثالث</MenuItem>
+        {options.map(option => (
+          <MenuItem value={option.value}>{option.label}</MenuItem>
+        ))}
       </Select>
     </React.Fragment>
   );

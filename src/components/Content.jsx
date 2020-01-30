@@ -15,6 +15,7 @@ import FilterRow from "./FilterRow";
 import SelectOptions from "./common/selectOptions";
 import TabsHeader from "./TabsHeader";
 import TabHeader from "./TabHeader";
+import SaveOrClear from "./common/saveOrClear";
 
 const drawerWidth = 250;
 
@@ -25,18 +26,21 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3),
     [theme.breakpoints.up("lg")]: {
       marginRight: drawerWidth
-    },
-    "&>*": {}
+    }
   },
   paperout: {
-    borderRadius: 20,
+    [theme.breakpoints.up("sm")]: {
+      borderRadius: 20
+    },
     height: "100%",
     marginTop: "2em",
     backgroundColor: theme.palette.primary.main,
     padding: 0
   },
   paperin: {
-    borderRadius: 20,
+    [theme.breakpoints.up("sm")]: {
+      borderRadius: 20
+    },
     padding: theme.spacing(2),
     height: "100%",
     marginTop: "2em",
@@ -58,6 +62,13 @@ const Content = () => {
         <Paper className={classes.paperin}>
           <TabHeader />
           <TabContent />
+          <Hidden smUp>
+            <Grid container justify="space-evenly">
+              <Grid item xs={12}>
+                <SaveOrClear saveLabel="اختيار" />
+              </Grid>
+            </Grid>
+          </Hidden>
         </Paper>
       </Paper>
     </main>

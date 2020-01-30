@@ -2,16 +2,15 @@ import React from "react";
 import {
   TableBody,
   Table,
-  TableContainer,
-  makeStyles,
-  Paper
+  TableContainer
+  // makeStyles
 } from "@material-ui/core";
 import Row from "./Row";
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650
-  }
-});
+// const useStyles = makeStyles({
+//   table: {
+//     minWidth: 650
+//   }
+// });
 
 const TabContent = () => {
   return (
