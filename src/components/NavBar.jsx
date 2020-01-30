@@ -1,6 +1,5 @@
 import React from "react";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import MenuIcon from "@material-ui/icons/Menu";
 import {
   AppBar,
   IconButton,
@@ -8,6 +7,8 @@ import {
   Badge,
   makeStyles
 } from "@material-ui/core";
+import Menu from "./Menu";
+
 const useStyles = makeStyles(theme => ({
   appBar: {
     backgroundColor: theme.palette.common.white
@@ -20,7 +21,7 @@ const NavBar = () => {
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
         <IconButton edge="start" aria-label="menu">
-          <MenuIcon />
+          {/* <Menu /> */}
         </IconButton>
         <IconButton
           edge="start"

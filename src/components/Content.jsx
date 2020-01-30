@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  makeStyles,
-  Hidden,
-  Paper,
-  Chip,
-  Grid,
-  TableContainer,
-  Table,
-  TableBody
-} from "@material-ui/core";
+import { makeStyles, Hidden, Paper, Grid } from "@material-ui/core";
 import Header from "./header";
 import TabContent from "./TabContent";
 import FilterRow from "./FilterRow";
-import SelectOptions from "./common/selectOptions";
 import TabsHeader from "./TabsHeader";
 import TabHeader from "./TabHeader";
 import SaveOrClear from "./common/saveOrClear";

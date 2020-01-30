@@ -39,7 +39,9 @@ const SelectOptions = ({ label, options = defualtOptions }) => {
           قائمة منسدلة
         </MenuItem>
         {options.map(option => (
-          <MenuItem value={option.value}>{option.label}</MenuItem>
+          <MenuItem value={option.value} key={option.value}>
+            {option.label}
+          </MenuItem>
         ))}
       </Select>
     </React.Fragment>
