@@ -4,14 +4,23 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: 0,
+    margin: 5,
     paddingTop: 20
   },
   saveBtn: {
     backgroundColor: "#6ec30b",
     color: theme.palette.common.white,
     lineHeight: 2.5,
-    width: 100
+    width: 100,
+    height: 52
+    // [theme.breakpoints.up("lg")]: {
+    //   width: 100,
+    //   height: 52
+    // },
+    // [theme.breakpoints.down("md")]: {
+    //   width: 100,
+    //   height: 52
+    // }
   },
 
   closeBtn: { fontSize: 40, color: "gray" }
@@ -20,9 +29,9 @@ const useStyles = makeStyles(theme => ({
 const SaveOrClear = () => {
   const classes = useStyles();
   return (
-    <Grid container justify="flex-end" spacing={2} className={classes.root}>
+    <Grid container justify="flex-end" spacing={1} className={classes.root}>
       <Grid item>
-        <Button variant="contained" size="large" className={classes.saveBtn}>
+        <Button variant="contained" className={classes.saveBtn}>
           حفظ
         </Button>
       </Grid>

@@ -20,26 +20,40 @@ const FilterRow = () => {
   return (
     <form className={classes.form} noValidate>
       <Grid container justify="space-between">
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} sm={12}>
           <Grid container spacing={1}>
-            <Grid item lg={4}>
+            <Grid item lg={4} md sm={8}>
               <InputField label="العنوان" />
             </Grid>
-            <Grid item lg>
+            <Grid item lg md sm={4}>
               <SelectOptions label="كلمة" />
             </Grid>
-            <Grid item lg>
-              <DatePickerComp label="يبدأ في" id="startDate" />
-            </Grid>
-            <Grid item lg>
-              <DatePickerComp label="ينتهي في" id="endDate" />
-            </Grid>
+            <Hidden smDown>
+              <Grid item lg md>
+                <DatePickerComp label="يبدأ في" id="startDate" />
+              </Grid>
+              <Grid item lg md>
+                <DatePickerComp label="ينتهي في" id="endDate" />
+              </Grid>
+            </Hidden>
           </Grid>
         </Grid>
-        <Grid item lg>
-          <Hidden xsDown>
-            <SaveOrClear />
-          </Hidden>
+        <Grid item lg md={3} sm={12}>
+          <Grid container spacing={1}>
+            <Hidden mdUp>
+              <Grid item sm>
+                <DatePickerComp label="يبدأ في" id="startDate" />
+              </Grid>
+              <Grid item sm>
+                <DatePickerComp label="ينتهي في" id="endDate" />
+              </Grid>
+            </Hidden>
+            <Hidden xsDown>
+              <Grid item sm>
+                <SaveOrClear />
+              </Grid>
+            </Hidden>
+          </Grid>
         </Grid>
       </Grid>
     </form>

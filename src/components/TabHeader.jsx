@@ -8,7 +8,8 @@ import {
   TableRow,
   TableBody,
   TableCell,
-  Chip
+  Chip,
+  Hidden
 } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   chip: {
@@ -32,26 +33,43 @@ const TabHeader = () => {
     <TableContainer>
       <Table>
         <TableBody>
-          <TableRow key="TabHeader1">
-            {[...Array(14).keys()].map(item => (
-              <TableCell key={item + "key"} style={{ padding: 5 }}>
-                <Chip
-                  key={item + "key"}
-                  label={item + 1}
-                  onClick={handleClick}
-                  className={classes.chip}
-                  variant="outlined"
-                />
-                <Chip
-                  key={item + "key"}
-                  label={item + 15}
-                  onClick={handleClick}
-                  className={classes.chip}
-                  variant="outlined"
-                />
-              </TableCell>
-            ))}
-          </TableRow>
+          <Hidden mdDown>
+            <TableRow key="TabHeader1">
+              {[...Array(14).keys()].map(item => (
+                <TableCell key={item + "key"} style={{ padding: 5 }}>
+                  <Chip
+                    key={item + "key"}
+                    label={item + 1}
+                    onClick={handleClick}
+                    className={classes.chip}
+                    variant="outlined"
+                  />
+                  <Chip
+                    key={item + "key"}
+                    label={item + 15}
+                    onClick={handleClick}
+                    className={classes.chip}
+                    variant="outlined"
+                  />
+                </TableCell>
+              ))}
+            </TableRow>
+          </Hidden>
+          <Hidden lgUp>
+            <TableRow key="TabHeader1">
+              {[...Array(28).keys()].map(item => (
+                <TableCell key={item + "key"} style={{ padding: 5 }}>
+                  <Chip
+                    key={item + "key"}
+                    label={item + 1}
+                    onClick={handleClick}
+                    className={classes.chip}
+                    variant="outlined"
+                  />
+                </TableCell>
+              ))}
+            </TableRow>
+          </Hidden>
         </TableBody>
       </Table>
     </TableContainer>

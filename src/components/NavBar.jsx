@@ -19,7 +19,7 @@ const NavBar = () => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
+        <IconButton edge="start" aria-label="menu">
           <MenuIcon />
         </IconButton>
         <IconButton
@@ -34,7 +34,7 @@ const NavBar = () => {
         >
           <img src="./logo.png" alt="logo" />
         </IconButton>
-        <IconButton edge="start" color="inherit" aria-label="notification">
+        <IconButton edge="start" aria-label="notification">
           <Badge badgeContent={5} color="secondary">
             <NotificationsIcon />
           </Badge>
