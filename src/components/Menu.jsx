@@ -14,7 +14,8 @@ import {
   Grid,
   InputBase,
   Paper,
-  ListItemIcon
+  ListItemIcon,
+  fade
 } from "@material-ui/core";
 import { red, grey } from "@material-ui/core/colors";
 import SearchIcon from "./common/searchIcon";
@@ -63,20 +64,17 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: grey[200],
     height: "100%"
   },
-  listItemText: {
-    flexGrow: 0
-  },
   listItem: {
     "&:hover": {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: fade(theme.palette.primary.main, 1),
       color: theme.palette.common.white
     }
+  },
+  listItemText: {
+    flexGrow: 0
   }
 }));
 
-const handleHover = isHover => {
-  this.childIsHover = isHover;
-};
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
@@ -150,11 +148,7 @@ export default function Menu() {
           <List>
             {MenuItems.map(item => (
               <React.Fragment>
-                <ListItem
-                  button
-                  onHover={handleHover}
-                  className={classes.listItem}
-                >
+                <ListItem button className={classes.listItem}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText className={classes.listItemText}>
                     {item.label}

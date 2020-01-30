@@ -21,20 +21,22 @@ import {
 const drawerWidth = 250;
 
 const useStyles = makeStyles(theme => ({
-  image: { padding: theme.spacing(3) },
+  image: { width: 150, marginBottom: 30, marginRight: 30 },
   drawer: {
     width: drawerWidth,
     flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth,
-    padding: theme.spacing(3)
+    width: drawerWidth
   },
   listItem: {
     "&:hover": {
       backgroundColor: fade(theme.palette.primary.main, 1),
       color: theme.palette.common.white
     }
+  },
+  listItemText: {
+    flexGrow: 0
   }
 }));
 const SidBar = () => {
@@ -54,35 +56,43 @@ const SidBar = () => {
           <img alt="logo" src="logo.png" className={classes.image} />
         </ListItem>
         <ListItem>
-          <Avatar src="ic_avatar.png" />
-          <ListItemText>الاسم</ListItemText>
-          <IconButton size="small">
-            <ArrowDropDownIcon fontSize="inherit" />
+          <Avatar src="ic_avatar.png" style={{ marginLeft: 10 }} />
+          <ListItemText className={classes.listItemText}>الاسم</ListItemText>
+          <IconButton style={{ marginRight: 100 }}>
+            <ArrowDropDownIcon />
           </IconButton>
         </ListItem>
         <ListItem button className={classes.listItem}>
           <ListItemIcon>
             <Title1Icon />
           </ListItemIcon>
-          <ListItemText>عنوان أول</ListItemText>
+          <ListItemText className={classes.listItemText}>
+            عنوان أول
+          </ListItemText>
         </ListItem>
         <ListItem button className={classes.listItem}>
           <ListItemIcon>
             <Title2Icon />
           </ListItemIcon>
-          <ListItemText>عنوان ثاني</ListItemText>
+          <ListItemText className={classes.listItemText}>
+            عنوان ثاني
+          </ListItemText>
         </ListItem>
         <ListItem button className={classes.listItem}>
           <ListItemIcon>
             <Title3Icon />
           </ListItemIcon>
-          <ListItemText>عنوان ثالث</ListItemText>
+          <ListItemText className={classes.listItemText}>
+            عنوان ثالث
+          </ListItemText>
         </ListItem>
         <ListItem button className={classes.listItem}>
           <ListItemIcon>
             <Title4Icon />
           </ListItemIcon>
-          <ListItemText>عنوان رابع</ListItemText>
+          <ListItemText className={classes.listItemText}>
+            عنوان رابع
+          </ListItemText>
         </ListItem>
       </List>
     </Drawer>

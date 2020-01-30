@@ -32,7 +32,7 @@ const NavBar = () => {
             marginRight: "auto"
           }}
         >
-          <img src="./logo.png" alt="logo" />
+          <img src="./logo.png" alt="logo" width="60" />
         </IconButton>
         <IconButton edge="start" aria-label="notification">
           <Badge badgeContent={5} color="secondary">

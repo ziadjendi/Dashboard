@@ -27,3 +27,7 @@ code {
 #root .MuiChip-root.inactive-tab {
   background-color: transparent;
 }
+
+#root .MuiSvgIcon-root.svgIcon {
+  fill: #a9afbb;
+}

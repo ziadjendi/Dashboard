@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: "eeeeee",
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
+
     [theme.breakpoints.up("lg")]: {
       marginRight: drawerWidth
     }

@@ -7,7 +7,7 @@ const SplitBtn = () => {
       <Grid item>
         <Typography variant="subtitle1">العربية</Typography>
       </Grid>
-      <Grid item>
+      <Grid>
         <DownArrow />
       </Grid>
     </Grid>
