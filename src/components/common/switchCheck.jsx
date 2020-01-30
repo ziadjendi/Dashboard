@@ -1,6 +1,12 @@
 import React from "react";
-import { Switch } from "@material-ui/core";
+import { Switch, makeStyles } from "@material-ui/core";
+const useStyles = makeStyles(theme => ({
+  switch: {
+    [theme.breakpoints.down("xs")]: {}
+  }
+}));
 const SwitchCheck = () => {
+  const classes = useStyles();
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
@@ -13,7 +19,8 @@ const SwitchCheck = () => {
       checked={state.checkedA}
       onChange={handleChange("checkedA")}
       value="checkedA"
-      inputProps={{ "aria-label": "secondary checkbox" }}
+      className={classes.switch}
+      size="small"
     />
   );
 };
