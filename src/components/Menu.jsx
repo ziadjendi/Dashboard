@@ -13,24 +13,67 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import MenuIcon from "@material-ui/icons/Menu";
+import {
+  Avatar,
+  Grid,
+  TextField,
+  Fab,
+  InputBase,
+  fade
+} from "@material-ui/core";
+import red from "@material-ui/core/colors/red";
+import SearchIcon from "./common/searchIcon";
+import { grey } from "@material-ui/core/colors";
+import RainBow from "./RainBow";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    position: "relative"
+    position: "relative",
+    backgroundColor: theme.palette.common.white
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1
+  },
+  search: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    borderStyle: "solid",
+    borderColor: grey[400],
+    borderWidth: 1,
+    margin: 20,
+    height: 50,
+    width: "90%"
+  },
+  searchIcon: {
+    width: theme.spacing(7),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    left: 0,
+    top: 0
+  },
+  inputRoot: {
+    color: "inherit",
+    width: "100%"
+  },
+  inputInput: {
+    padding: theme.spacing(2, 3, 1, 0),
+    transition: theme.transitions.create("width"),
+    width: "100%"
   }
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction="left" ref={ref} {...props} />;
 });
 
 export default function Menu() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState();
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -42,33 +85,50 @@ export default function Menu() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <IconButton edge="start" aria-label="menu" onClick={handleClickOpen}>
         <MenuIcon />
-      </Button>
+      </IconButton>
       <Dialog
         fullScreen
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={handleClose}
-              aria-label="close"
-            >
-              <CloseIcon />
+        <Grid container justify="space-between" style={{ marginTop: 20 }}>
+          <Grid item xs={4}>
+            <IconButton onClick={handleClose} aria-label="close">
+              <CloseIcon style={{ fontSize: 35, color: red[800] }} />
             </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              Sound
-            </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
-            </Button>
-          </Toolbar>
-        </AppBar>
+          </Grid>
+          <Grid item xs={4}>
+            <IconButton aria-label="logo">
+              <img src="./logo.png" alt="logo" width="90" />
+            </IconButton>
+          </Grid>
+          <Grid item xs={4}>
+            <IconButton
+              style={{ position: "absolute", left: 5 }}
+              aria-label="avatar"
+            >
+              <Avatar alt="" src="./ic_avatar.png" />
+            </IconButton>
+          </Grid>
+        </Grid>
+
+        <div className={classes.search}>
+          <InputBase
+            placeholder="بحث"
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
+          <div className={classes.searchIcon}>
+            <SearchIcon />
+          </div>
+        </div>
+        <RainBow />
         <List>
           <ListItem button>
             <ListItemText primary="Phone ringtone" secondary="Titania" />

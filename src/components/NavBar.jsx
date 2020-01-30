@@ -20,9 +20,8 @@ const NavBar = () => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
-        <IconButton edge="start" aria-label="menu">
-          {/* <Menu /> */}
-        </IconButton>
+        <Menu />
+
         <IconButton
           edge="start"
           aria-label="logo"

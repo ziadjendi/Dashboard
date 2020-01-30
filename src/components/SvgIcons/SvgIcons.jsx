@@ -36,3 +36,16 @@ export function LanguageIcon(props) {
     </SvgIcon>
   );
 }
+export function RainBowIcon(props) {
+  return (
+    <SvgIcon {...props}>
+      <path fill="#8560A8" d="M1206 0h203v5h-203z" />
+      <path fill="#EF5761" d="M1004 0h202v5h-202z" />
+      <path fill="#34A2D3" d="M201 0h202v5H201z" />
+      <path fill="#1169A2" d="M0 0h202v5H0z" />
+      <path fill="#F69151" d="M804 0h202v5H804z" />
+      <path fill="#A0CD58" d="M402 0h202v5H402z" />
+      <path fill="#FDE343" d="M605 0h199v5H605z" />
+    </SvgIcon>
+  );
+}
