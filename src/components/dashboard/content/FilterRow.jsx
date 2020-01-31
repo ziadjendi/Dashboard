@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import SelectOptions from "./common/selectOptions";
+import SelectOptions from "../../common/inputs/selectOptions";
 import { Grid, Hidden } from "@material-ui/core";
-import InputField from "./common/InputField";
-import SaveOrClear from "./common/saveOrClear";
-import DatePickerComp from "./common/DatePickerComp";
+import InputField from "../../common/inputs/InputField";
+import SaveOrClear from "../../common/buttons/saveOrClear";
+import DatePickerComp from "../../common/inputs/DatePickerComp";
 
 const useStyles = makeStyles(theme => ({
   form: { width: "100%" },
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const FilterRow = () => {
+const FilterRow = props => {
   const classes = useStyles();
 
   return (

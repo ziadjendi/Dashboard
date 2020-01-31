@@ -5,7 +5,7 @@ import TabContent from "./TabContent";
 import FilterRow from "./FilterRow";
 import TabsHeader from "./TabsHeader";
 import TabHeader from "./TabHeader";
-import SaveOrClear from "./common/saveOrClear";
+import SaveOrClear from "../../common/buttons/saveOrClear";
 
 const drawerWidth = 250;
 
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Content = () => {
+const Content = props => {
   const classes = useStyles();
 
   return (

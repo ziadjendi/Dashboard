@@ -1,6 +1,6 @@
 import React from "react";
 import { Hidden, Chip, makeStyles } from "@material-ui/core";
-import SelectOptions from "./common/selectOptions";
+import SelectOptions from "../../common/inputs/selectOptions";
 
 const useStyles = makeStyles(theme => ({
   chip: {
@@ -27,7 +27,7 @@ const TabTitles = [
 
 const handleClick = e => {};
 
-const TabsHeader = () => {
+const TabsHeader = props => {
   const classes = useStyles();
 
   return (

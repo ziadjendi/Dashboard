@@ -1,24 +1,21 @@
 import React from "react";
-import { Grid, Typography, Badge } from "@material-ui/core";
+import { Grid, Typography, Badge, Box } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import SplitBtn from "./common/splitBtn";
-import Search from "./common/search";
+import SplitBtn from "../../common/buttons/splitBtn";
+import Search from "../../common/inputs/search";
 
-// const useStyles = makeStyles(theme => ({
-//   margin: {
-//     margin: theme.spacing(1)
-//   }
-// }));
-const Header = () => {
-  // const classes = useStyles();
-
+const Header = props => {
   return (
     <Grid container justify="space-between">
       <Grid item lg>
-        <Typography variant="h5">عنوان ما</Typography>
+        <Typography component="div">
+          <Box textAlign="right" fontWeight={600} fontSize={30} m={1}>
+            عنوان ما
+          </Box>
+        </Typography>
       </Grid>
       <Grid item lg>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justify="flex-end">
           <Grid item>
             <SplitBtn />
           </Grid>

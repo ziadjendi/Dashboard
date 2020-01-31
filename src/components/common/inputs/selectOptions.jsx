@@ -1,6 +1,7 @@
 import React from "react";
 import { Select, MenuItem, Typography, makeStyles } from "@material-ui/core";
-import DownArrow from "./downArrow";
+import DownArrow from "../icons/downArrow";
+
 const useStyles = makeStyles(theme => ({
   select: {
     backgroundColor: theme.palette.common.white,
@@ -8,12 +9,14 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   }
 }));
+
 const defualtOptions = [
   { label: "خيار أول", value: 10 },
   { label: "خيار ثاني", value: 20 },
   { label: "خيار ثالث", value: 30 },
   { label: "خيار رابع", value: 40 }
 ];
+
 const SelectOptions = ({ label, options = defualtOptions }) => {
   const classes = useStyles();
 

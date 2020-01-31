@@ -32,7 +32,7 @@ export default function DatePickerComp({ id, label = "" }) {
           openTo="date"
           id={id}
           variant="dialog"
-          className={classes.datePicker}
+          className={(classes.datePicker, "dateRange")}
           value={selectedDate}
           onChange={handleDateChange}
           showTodayButton

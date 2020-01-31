@@ -7,9 +7,9 @@ import {
   Hidden,
   Grid
 } from "@material-ui/core";
-import DatePickerComp from "./common/DatePickerComp";
-import SelectOptions from "./common/selectOptions";
-import SwitchCheck from "./common/switchCheck";
+import DatePickerComp from "../../common/inputs/DatePickerComp";
+import SelectOptions from "../../common/inputs/selectOptions";
+import SwitchCheck from "../../common/buttons/switchCheck";
 const row = {
   id: id => "rowId" + id,
   description: (

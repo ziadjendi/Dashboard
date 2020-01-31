@@ -1,7 +1,8 @@
 import React from "react";
 import { Typography, TextField, Grid, Fab } from "@material-ui/core";
-import SearchIcon from "./searchIcon";
-const Search = () => {
+import SearchIcon from "../icons/searchIcon";
+
+const Search = props => {
   return (
     <React.Fragment>
       <Grid container spacing={0}>

@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 }));
 const handleClick = e => {};
 
-const TabHeader = () => {
+const TabHeader = props => {
   const classes = useStyles();
   return (
     <TableContainer>
@@ -36,14 +36,14 @@ const TabHeader = () => {
               {[...Array(14).keys()].map(item => (
                 <TableCell key={item + "key"} style={{ padding: 5 }}>
                   <Chip
-                    key={item + "key"}
+                    key={"key" + item}
                     label={item + 1}
                     onClick={handleClick}
                     className={classes.chip}
                     variant="outlined"
                   />
                   <Chip
-                    key={item + "key"}
+                    key={"key" + (item + 15)}
                     label={item + 15}
                     onClick={handleClick}
                     className={classes.chip}

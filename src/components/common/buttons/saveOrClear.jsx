@@ -1,13 +1,9 @@
 import React from "react";
-import { Button, makeStyles, Grid, Box } from "@material-ui/core";
+import { Button, makeStyles, Grid } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    margin: 5,
-    paddingTop: 20
-  },
   saveBtn: {
     backgroundColor: "#6ec30b",
     color: theme.palette.common.white,
@@ -24,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 40,
     fill: grey[600],
     [theme.breakpoints.down("xs")]: {
-      fontSize: 30
+      width: 30
     }
   }
 }));
@@ -32,20 +28,18 @@ const useStyles = makeStyles(theme => ({
 const SaveOrClear = ({ saveLabel = "حفظ" }) => {
   const classes = useStyles();
   return (
-    <Box width={1}>
-      <Grid container spacing={1} className={classes.root}>
-        <Grid item xs={8}>
-          <Button variant="contained" className={classes.saveBtn}>
-            {saveLabel}
-          </Button>
-        </Grid>
-        <Grid item xs={4}>
-          <Button variant="outlined">
-            <CloseIcon className={classes.closeBtn} />
-          </Button>
-        </Grid>
+    <Grid container spacing={1} className={"save-clear"}>
+      <Grid item xs={8}>
+        <Button variant="contained" className={classes.saveBtn}>
+          {saveLabel}
+        </Button>
       </Grid>
-    </Box>
+      <Grid item xs>
+        <Button variant="outlined">
+          <CloseIcon className={classes.closeBtn} />
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

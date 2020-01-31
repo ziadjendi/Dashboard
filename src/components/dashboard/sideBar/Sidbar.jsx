@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import {
   List,
   ListItem,
@@ -10,16 +11,14 @@ import {
   makeStyles,
   fade
 } from "@material-ui/core";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import {
   Title1Icon,
   Title2Icon,
   Title3Icon,
   Title4Icon
-} from "./SvgIcons/SvgIcons";
+} from "../../common/icons/SvgIcons";
 
 const drawerWidth = 250;
-
 const useStyles = makeStyles(theme => ({
   image: { width: 150, marginBottom: 30, marginRight: 30 },
   drawer: {
@@ -39,9 +38,16 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 0
   }
 }));
-const SidBar = () => {
-  const classes = useStyles();
 
+const items = [
+  { label: "عنوان أول", icon: <Title1Icon /> },
+  { label: "عنوان ثاني", icon: <Title2Icon /> },
+  { label: "عنوان ثالث", icon: <Title3Icon /> },
+  { label: "عنوان رابع", icon: <Title4Icon /> }
+];
+
+const SidBar = props => {
+  const classes = useStyles();
   return (
     <Drawer
       className={classes.drawer}
@@ -62,38 +68,18 @@ const SidBar = () => {
             <ArrowDropDownIcon />
           </IconButton>
         </ListItem>
-        <ListItem button className={classes.listItem}>
-          <ListItemIcon>
-            <Title1Icon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText}>
-            عنوان أول
-          </ListItemText>
-        </ListItem>
-        <ListItem button className={classes.listItem}>
-          <ListItemIcon>
-            <Title2Icon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText}>
-            عنوان ثاني
-          </ListItemText>
-        </ListItem>
-        <ListItem button className={classes.listItem}>
-          <ListItemIcon>
-            <Title3Icon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText}>
-            عنوان ثالث
-          </ListItemText>
-        </ListItem>
-        <ListItem button className={classes.listItem}>
-          <ListItemIcon>
-            <Title4Icon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText}>
-            عنوان رابع
-          </ListItemText>
-        </ListItem>
+        {items.map((item, index) => (
+          <ListItem
+            button
+            className={classes.listItem}
+            key={index + "listItem"}
+          >
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemText className={classes.listItemText}>
+              {item.label}
+            </ListItemText>
+          </ListItem>
+        ))}
       </List>
     </Drawer>
   );

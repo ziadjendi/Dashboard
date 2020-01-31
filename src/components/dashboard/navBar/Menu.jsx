@@ -1,14 +1,19 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-import Slide from "@material-ui/core/Slide";
 import MenuIcon from "@material-ui/icons/Menu";
+import { red, grey } from "@material-ui/core/colors";
+import SearchIcon from "../../common/icons/searchIcon";
+import RainBow from "../../common/RainBow";
+import {
+  Slide,
+  IconButton,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  Dialog
+} from "@material-ui/core";
 import {
   Avatar,
   Grid,
@@ -17,17 +22,13 @@ import {
   ListItemIcon,
   fade
 } from "@material-ui/core";
-import { red, grey } from "@material-ui/core/colors";
-import SearchIcon from "./common/searchIcon";
-
-import RainBow from "./RainBow";
 import {
   Title4Icon,
   Title3Icon,
   Title2Icon,
   Title1Icon,
   Title5Icon
-} from "./SvgIcons/SvgIcons";
+} from "../../common/icons/SvgIcons";
 
 const useStyles = makeStyles(theme => ({
   search: {
@@ -86,7 +87,8 @@ const MenuItems = [
   { label: "عنوان رابع", icon: <Title4Icon /> },
   { label: "عنوان خامس", icon: <Title5Icon /> }
 ];
-export default function Menu() {
+
+export default function Menu(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -129,7 +131,6 @@ export default function Menu() {
             </IconButton>
           </Grid>
         </Grid>
-
         <div className={classes.search}>
           <InputBase
             placeholder="بحث"

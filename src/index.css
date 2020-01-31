@@ -31,3 +31,58 @@ code {
 #root .MuiSvgIcon-root.svgIcon {
   fill: #a9afbb;
 }
+
+#root .save-clear {
+  margin-top: 37px;
+}
+
+#root .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+#root .MuiButtonBase-root:focus,
+#root .MuiButtonBase-root:hover {
+  border-width: 2px;
+}
+#root .MuiGrid-item .MuiTypography-root {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#root .dateRange div button .MuiIconButton-label {
+  color: #00a5d9;
+}
+
+@media screen and (max-width: 599.95px) {
+  .MuiTable-root .MuiGrid-grid-xs-6 {
+    padding: 0 10px;
+  }
+  #root .MuiSwitch-root {
+    margin-top: 20px;
+  }
+  #root .MuiSvgIcon-root {
+    width: 0.8em;
+    height: 0.8em;
+  }
+  #root .MuiInputBase-formControl .MuiIconButton-root {
+    padding: 0;
+  }
+  #root .MuiOutlinedInput-input {
+    padding: 14px 10px;
+  }
+  #root .MuiInputBase-root {
+    height: 46px;
+  }
+  #root .MuiButtonBase-root.MuiButton-root.MuiButton-contained {
+    height: 42px;
+  }
+  #root .save-clear {
+    margin-top: 20px;
+  }
+  #root .MuiGrid-item .MuiTypography-root {
+    font-size: 15px;
+  }
+  #root header .MuiIconButton-label img {
+    height: 37px;
+  }
+}
