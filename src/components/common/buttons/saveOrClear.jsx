@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 40,
     fill: grey[600],
     [theme.breakpoints.down("xs")]: {
-      width: 30
+      width: 20
     }
   }
 }));
@@ -28,13 +28,13 @@ const useStyles = makeStyles(theme => ({
 const SaveOrClear = ({ saveLabel = "حفظ" }) => {
   const classes = useStyles();
   return (
-    <Grid container spacing={1} className={"save-clear"}>
-      <Grid item xs={8}>
+    <Grid container spacing={1} justify="space-evenly" className={"save-clear"}>
+      <Grid item sm={7} xs={8}>
         <Button variant="contained" className={classes.saveBtn}>
           {saveLabel}
         </Button>
       </Grid>
-      <Grid item xs>
+      <Grid item xs sm>
         <Button variant="outlined">
           <CloseIcon className={classes.closeBtn} />
         </Button>

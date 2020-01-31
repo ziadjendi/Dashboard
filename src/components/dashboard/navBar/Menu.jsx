@@ -147,8 +147,8 @@ export default function Menu(props) {
         <RainBow />
         <Paper className={classes.paper}>
           <List>
-            {MenuItems.map(item => (
-              <React.Fragment>
+            {MenuItems.map((item, index) => (
+              <React.Fragment key={"menuKey" + index}>
                 <ListItem button className={classes.listItem}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText className={classes.listItemText}>
